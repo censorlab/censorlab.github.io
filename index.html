@@ -2,20 +2,10 @@
 <html>
 
 <head>
+  
+  <title>Censor's Lab Lobby</title>
 
-  <script>
-    function validateAge() {
-      var age = parseInt(document.forms["myForm"]["age"].value);
 
-      if (age < 7) {
-        alert("לא ניתן להמשיך בניסוי.");
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
-  </script>
 
 </head>
 
@@ -23,11 +13,29 @@
 
   <h2 style="text-align:center"><br>בכדי להשתתף בניסוי, יש להקפיד על שינה של לפחות 7 שעות בלילה הקודם למפגש.</h2>
 
-  <form name="myForm" action="/action_page.php" onsubmit="return validateAge()" method="post">
+  <form name="myForm" action="" onsubmit="return validateAndRedirect()" method="post">
     <strong> מספר השעות אשר ישנת בלילה האחרון:</strong> <br><br> <input type="text" name="age"> <br><br>
     <input type="submit" value="אישור">
   </form>
 
 </body>
+
+<script type="text/javascript" src="realtime-client-utils.js"></script>
+
+<script>
+  function validateAndRedirect() {
+    var age = parseInt(document.forms["myForm"]["age"].value);
+
+    if (age < 7) {
+      alert("לא ניתן להמשיך בניסוי.");
+
+      return false;
+    }
+    else {
+      window.location.href = rtclient.getParams()["exp"];
+      return true;
+    }
+  }
+</script>
 
 </html>
