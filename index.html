@@ -31,8 +31,9 @@
 
       return false;
     }
-    else {
-      window.location.href = rtclient.getParams()["exp"];
+    else {      
+      const link_params = rtclient.getParams();
+      window.location.href = "https://run.pavlovia.org/sa/" + link_params["experiment"] + "/html/?__pilotToken=" + link_params["__pilotToken"] + "&__oauthToken=" + link_params["__oauthToken"];
       return true;
     }
   }
