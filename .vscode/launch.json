@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch index.html",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "name": "Launch URL",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "https://censorlab.github.io/?experiment=parallel-learning&__pilotToken=9bf31c7ff062936a96d3c8bd1f8f2ff3&__oauthToken=2833b55d79461fe4806366bfbe1b22ad8863eaed73cb328733475d01fb236f1f",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Attach",
+            "type": "firefox",
+            "request": "attach"
+        },
+        {
+            "name": "Launch WebExtension",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "addonPath": "${workspaceFolder}"
+        }
+    ]
+}
