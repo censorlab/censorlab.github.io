@@ -20,8 +20,6 @@
 
 </body>
 
-<script type="text/javascript" src="realtime-client-utils.js"></script>
-
 <script>
   function validateAndRedirect() {
     var age = parseInt(document.forms["myForm"]["age"].value);
@@ -32,8 +30,8 @@
       return false;
     }
     else {      
-      const link_params = rtclient.getParams();
-      window.location.href = "https://run.pavlovia.org/sa/" + link_params["experiment"] + "/html/?__pilotToken=" + link_params["__pilotToken"] + "&__oauthToken=" + link_params["__oauthToken"];
+      const urlParams = new URLSearchParams(window.location.search);
+      window.location.href = "https://run.pavlovia.org/sa/" + urlParams.get("experiment") + "/html/?__pilotToken=" + urlParams.get("__pilotToken") + "&__oauthToken=" + urlParams.get("__oauthToken");
       return true;
     }
   }
