@@ -3,12 +3,9 @@ function validateAndRedirect() {
 
     if (age < 7) {
       alert("לא ניתן להמשיך בניסוי.");
-
-      return false;
     }
     else {      
       const urlParams = new URLSearchParams(window.location.search);
-      window.location.href = "https://run.pavlovia.org/sa/" + urlParams.get("experiment") + "/html/?__pilotToken=" + urlParams.get("__pilotToken") + "&__oauthToken=" + urlParams.get("__oauthToken");
-      return true;
+      window.location.href = "https://run.pavlovia.org/CensorLab/" + urlParams.get("experiment") + "/html";
     }
   }
